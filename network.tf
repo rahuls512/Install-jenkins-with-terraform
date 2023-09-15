@@ -13,7 +13,6 @@ data "aws_availability_zones" "this" {
 # create default subnet if one does not exit
 resource "aws_default_subnet" "default_az1" {
   availability_zone = data.aws_availability_zones.this.names[0]
-
   tags = {
     Name = "default subnet"
   }
